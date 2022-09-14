@@ -75,10 +75,14 @@ function playGame() {
   let rpsButtons = document.querySelectorAll('.rpsButton');
   // * Adds an on click event listener to each RPS button and every time you click it, it calls the onClickRPS function with the RPS button that was last clicked *
  
-    rpsButtons.forEach( item => {
-      item.addEventListener('click', function (){
-        onClickRPS(rpsButtons);})
-    });
+    // rpsButtons.forEach( item => {
+    //   item.addEventListener('click', () => 
+    //     onClickRPS(rpsButtons))
+    // });
+
+    rpsButtons.forEach(rpsButton => {
+      rpsButton.onclick = () => onClickRPS(rpsButton)
+    })
 
   // Add a click listener to the end game button that runs the endGame() function on click
   document.querySelector('#endGameButton').addEventListener('click', endGame);  
